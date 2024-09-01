@@ -197,6 +197,7 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
      *
      * @param key
      * @return true if insertion is successful and false otherwise
+     * @throws throws nullpointer exception if key is null
      */
     public boolean insert(T key) {
         /* TODO */
@@ -212,6 +213,13 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
 		 return inserthelper(root,key);
     }
 
+    /*
+     * Private helper method for insert helper
+     * @param node
+     * @param key
+     * @return true if inserted, else false
+     * 
+     */
     private boolean inserthelper(BSTNode node, T key)
 	 {
 		if (key.compareTo(node.key)<0)
@@ -252,6 +260,13 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
         return findKeyhelper(root, key);
     }
 
+    /**
+     * Private helper method for findKey method
+     *
+     * @param key To be searched
+     * @param node node in which findkeyhelper iterates over
+     * @return True if the 'key' is found, false otherwise
+     */
     private boolean findKeyhelper(BSTNode node, T key)
 	{
 
@@ -296,6 +311,14 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
         insertDatahelper(root, key, data);
     }
 
+    /**
+     * private helper method for insertData
+     *
+     * @param key To be searched
+     * @param data To be inserteed
+     * @param node at which recursion is applied
+     * @return True if data is successfully inserted, false otherwise
+     */
     private boolean insertDatahelper(BSTNode node, T key, T data)
 	 {
  
@@ -338,6 +361,13 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
         return findDataListhelper(root, key);
     }
 
+    /**
+     * Return the LinkedList of the node with key value 'key'
+     *
+     * @param key Target key
+     * @param node node corresponding to key
+     * @return LinkedList of the node whose key value is 'key'
+     */
     private LinkedList<T> findDataListhelper(BSTNode node, T key)
 	 {
  
@@ -393,9 +423,17 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
 
     /* * * * * BST Iterator * * * * */
 
+    /*
+     * Implements iterator using stack API, by pushing leftmost list after each pop
+     * 
+     */
     public class BSTree_Iterator implements Iterator<T> {
         
         Stack<BSTNode> stack;
+        /*
+         * Constructor for stack empty parameters
+         * 
+         */
         public BSTree_Iterator() {
             /* TODO */
              stack=new Stack<>();
@@ -408,6 +446,11 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
             
         }
 
+         /*
+         * private method for initializing left most path for stack
+         * @return returns nothing
+         * @param node takes in a node to begin the method. 
+         */
         private void pushLeft(BSTNode node) {
             while (node != null) {
                 stack.push(node);
@@ -415,11 +458,19 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
             }
         }
 
+         /*
+         * checks whether next element exists in iterator
+         * @return returns true if element exists, else false
+         */
         public boolean hasNext() {
             /* TODO */
             return stack.isEmpty();
         }
 
+         /*
+         * returns next element in iterator, deletes item from stack
+         * @return returns the element at top of stack of type T
+         */
         public T next() {
             /* TODO */
             if (!hasNext()) {
@@ -435,6 +486,10 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
         }
     }
 
+     /*
+         * Constructor for iterator, allows for Junit test in BSTreeTester
+         * returns iterator of type T
+         */
     public Iterator<T> iterator() {
         /* TODO */
         return new BSTree_Iterator();
@@ -443,12 +498,18 @@ public class BSTree<T extends Comparable<? super T>> implements Iterable {
     }
 
     /* * * * * Extra Credit Methods * * * * */
-
+     /*
+         *Did not attempt
+         * @return returns arraylist
+         */
     public ArrayList<T> intersection(Iterator<T> iter1, Iterator<T> iter2) {
         /* TODO */
         return null;
     }
-
+       /*
+        *Did not attempt
+        * @return returns element of Type T
+        */
     public T levelMax(int level) {
         /* TODO */
         return null;
