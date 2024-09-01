@@ -1,0 +1,28 @@
+Name: Michael Ren 
+PID: A16430317
+Date: 8/31/2024
+
+1. (1pt) Approximately how long did you spend on this PA?
+   Much longer than previous PAs, around 16 hours. 
+
+2. (4pt) What did you find similar about the implementation of the BSTree/BSTNode and the Node/DoublyLinkedList from PA 1? What was different?
+   The Node class was almost the same, except that there were additional data/parameters
+   like key and linkedlist for information. BSTree also has the nodes follow an ordering
+   which is not sequential and instead based on the value of the key of the nodes. 	
+
+
+3. (3pt) Try searching for your favorite actor (or just any actor you know) in the dataset. What movies, studios, and ratings appear? Is this what you expect? Why or why not? (Don't forget to let us know who you searched for!)
+    Keanu Reeves, John Wick. Studio is summit studios. Rating is rated R. Yeah it's what I expected since the John Wick series
+    can get a bit gory at times. That being said, the amount of movies included is pretty sparse, there's also the matrix and other
+    movies he's starred in, so bit surprised not more movies were included. 
+    
+    
+    
+
+4. (2pt) Do you think a tree is an appropriate data structure to use for a search engine/database? Why or why not? (There’s no right or wrong answers here!)
+    I don't know enough mathematics or algorithm analysis to be able to 
+    give a professional answer as to why it is, but I would say probably yes. 
+    Given that for trees one can come up with these different ways of enforcing 
+    balance, so as to be easy to sort, insert, and "balance" features and tradeoffs
+    based on what we need. That and I really don't know what other structures besides
+    trees and linkedlists exist, so I'd say it's definitely a step up compared to linkedlists. 
